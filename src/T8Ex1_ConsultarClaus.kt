@@ -20,8 +20,7 @@ fun main() {
     itemMenu = readLine()!!.toInt()
 
     do {
-
-        for (claves in listadoJedis) {
+            val claves = listadoJedis.elementAt(itemMenu - 1)
 
             if (conexion.type(claves) == "string") {
                 println("$claves: ${conexion.get(claves)}")
@@ -50,8 +49,6 @@ fun main() {
 
             print("Introduce un numero (0 para salir): ")
             itemMenu = readLine()!!.toInt()
-
-        }
 
     } while (itemMenu != 0)
 
